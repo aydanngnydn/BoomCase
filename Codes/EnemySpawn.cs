@@ -14,7 +14,7 @@ public class EnemySpawn : MonoBehaviour
     {
        if(!playerscript.isdead && playerscript.isGameStarted && first)
         {StartCoroutine(Spawn());
-        first = false;
+        first = false;//to prevent Update from running Spawn function multiple times
         }
     }
 
@@ -22,7 +22,7 @@ public class EnemySpawn : MonoBehaviour
     {
         enemies = new GameObject[5];
 
-        while(!playerscript.isdead && playerscript.isGameStarted){//enemies spawn on the platform after game starts
+        while(!playerscript.isdead && playerscript.isGameStarted){//5 enemies spawn in the range of the platform after game starts 
             for(int i = 0; i < enemies.Length; i++)
             {
                 GameObject clone = (GameObject)Instantiate(enemyPrefab, new Vector3(Random.Range(-place, place), 0, (playerscript.transform.position.z + difference)), Quaternion.identity);
