@@ -23,12 +23,6 @@ public class EnemyMovement : MonoBehaviour
         Follow();
     }
 
-    void HorizontalMove()
-    {
-        transform.Translate(new Vector3(0, 0, speed * Time.fixedDeltaTime));
-    }
-
-    
     void Follow()//enemies follow witch right after they spawn
     {
         if(!playerscript.isdead)
