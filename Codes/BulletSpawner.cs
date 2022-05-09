@@ -20,8 +20,5 @@ public class BulletSpawner : MonoBehaviour
     {
         var bullet = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
         bullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * bulletSpeed;
-        
     }
-
-
 }
